@@ -1,0 +1,7 @@
+services:
+  app_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
