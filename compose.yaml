@@ -5,3 +5,17 @@ services:
       dockerfile: Dockerfile
     ports:
       - 9000:9000
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_DB=link
+      - POSTGRES_USER=lal
+      - POSTGRES_PASSWORD=3%b1aAeb
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
