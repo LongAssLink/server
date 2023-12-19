@@ -1,0 +1,334 @@
+app_server-1  | [Running 'cargo run']
+app_server-1  |     Updating crates.io index
+app_server-1  |  Downloading crates ...
+app_server-1  |   Downloaded devise_codegen v0.4.1
+app_server-1  |   Downloaded cookie v0.18.0
+app_server-1  |   Downloaded is-terminal v0.4.9
+app_server-1  |   Downloaded httpdate v1.0.3
+app_server-1  |   Downloaded devise_core v0.4.1
+app_server-1  |   Downloaded async-stream v0.3.5
+app_server-1  |   Downloaded httparse v1.8.0
+app_server-1  |   Downloaded atomic v0.5.3
+app_server-1  |   Downloaded deranged v0.3.10
+app_server-1  |   Downloaded uuid v1.6.1
+app_server-1  |   Downloaded toml_edit v0.21.0
+app_server-1  |   Downloaded rustix v0.38.26
+app_server-1  |   Downloaded untrusted v0.9.0
+app_server-1  |   Downloaded itoa v1.0.9
+app_server-1  |   Downloaded tower-service v0.3.2
+app_server-1  |   Downloaded toml v0.8.8
+app_server-1  |   Downloaded serde_spanned v0.6.4
+app_server-1  |   Downloaded rustls v0.21.9
+app_server-1  |   Downloaded rocket_db_pools_codegen v0.1.0
+app_server-1  |   Downloaded rocket_db_pools v0.1.0
+app_server-1  |   Downloaded powerfmt v0.2.0
+app_server-1  |   Downloaded multer v2.1.0
+app_server-1  |   Downloaded figment v0.10.12
+app_server-1  |   Downloaded ubyte v0.10.4
+app_server-1  |   Downloaded encoding_rs v0.8.33
+app_server-1  |   Downloaded want v0.3.1
+app_server-1  |   Downloaded inlinable_string v0.1.15
+app_server-1  |   Downloaded home v0.5.5
+app_server-1  |   Downloaded unicode-xid v0.2.4
+app_server-1  |   Downloaded unicode-bidi v0.3.13
+app_server-1  |   Downloaded thiserror v1.0.50
+app_server-1  |   Downloaded ref-cast v1.0.20
+app_server-1  |   Downloaded uncased v0.9.9
+app_server-1  |   Downloaded try-lock v0.2.4
+app_server-1  |   Downloaded time-macros v0.2.15
+app_server-1  |   Downloaded time-core v0.1.2
+app_server-1  |   Downloaded pear_codegen v0.2.7
+app_server-1  |   Downloaded nanoid v0.4.0
+app_server-1  |   Downloaded mime v0.3.17
+app_server-1  |   Downloaded http-body v0.4.5
+app_server-1  |   Downloaded devise v0.4.1
+app_server-1  |   Downloaded binascii v0.1.4
+app_server-1  |   Downloaded async-stream-impl v0.3.5
+app_server-1  |   Downloaded yansi v1.0.0-rc.1
+app_server-1  |   Downloaded signal-hook-registry v1.4.1
+app_server-1  |   Downloaded zerocopy v0.7.29
+app_server-1  |   Downloaded syn v2.0.39
+app_server-1  |   Downloaded tokio v1.34.0
+app_server-1  |   Downloaded libc v0.2.150
+app_server-1  |   Downloaded ring v0.17.7
+app_server-1  |   Downloaded rocket v0.5.0
+app_server-1  |   Downloaded hyper v0.14.27
+app_server-1  |   Downloaded http v0.2.11
+app_server-1  |   Downloaded hkdf v0.12.3
+app_server-1  |   Downloaded h2 v0.3.22
+app_server-1  |   Downloaded winnow v0.5.25
+app_server-1  |   Downloaded webpki-roots v0.25.3
+app_server-1  |   Downloaded tokio-util v0.7.10
+app_server-1  |   Downloaded time v0.3.30
+app_server-1  |   Downloaded ryu v1.0.15
+app_server-1  |   Downloaded rustls-webpki v0.101.7
+app_server-1  |   Downloaded rocket_http v0.5.0
+app_server-1  |   Downloaded rocket_codegen v0.5.0
+app_server-1  |   Downloaded once_cell v1.18.0
+app_server-1  |   Downloaded crossbeam-utils v0.8.16
+app_server-1  |   Downloaded thiserror-impl v1.0.50
+app_server-1  |   Downloaded state v0.6.0
+app_server-1  |   Downloaded stable-pattern v0.1.0
+app_server-1  |   Downloaded sct v0.7.1
+app_server-1  |   Downloaded rustls-pemfile v1.0.4
+app_server-1  |   Downloaded ref-cast-impl v1.0.20
+app_server-1  |   Downloaded proc-macro2-diagnostics v0.10.1
+app_server-1  |   Downloaded pear v0.2.7
+app_server-1  |   Downloaded crossbeam-queue v0.3.8
+app_server-1  |   Downloaded const-oid v0.9.5
+app_server-1  |    Compiling tokio v1.34.0
+app_server-1  |    Compiling thiserror-impl v1.0.50
+app_server-1  |    Compiling rustix v0.38.26
+app_server-1  |    Compiling pear_codegen v0.2.7
+app_server-1  |    Compiling rustls-webpki v0.101.7
+app_server-1  |    Compiling http-body v0.4.5
+app_server-1  |    Compiling ring v0.17.7
+app_server-1  |    Compiling itertools v0.12.0
+app_server-1  |    Compiling parking_lot_core v0.9.9
+app_server-1  |    Compiling rand_core v0.6.4
+app_server-1  |    Compiling cookie v0.18.0
+app_server-1  |    Compiling ref-cast v1.0.20
+app_server-1  |    Compiling fastrand v2.0.1
+app_server-1  |    Compiling tower-service v0.3.2
+app_server-1  |    Compiling finl_unicode v1.2.0
+app_server-1  |    Compiling httpdate v1.0.3
+app_server-1  |    Compiling stringprep v0.1.4
+app_server-1  |    Compiling is-terminal v0.4.9
+app_server-1  |    Compiling sqlformat v0.2.3
+app_server-1  |    Compiling rand_chacha v0.3.1
+app_server-1  |    Compiling parking_lot v0.12.1
+app_server-1  |    Compiling rustls v0.21.9
+app_server-1  |    Compiling rand v0.8.5
+app_server-1  |    Compiling futures-intrusive v0.5.0
+app_server-1  |    Compiling tokio-util v0.7.10
+app_server-1  |    Compiling sha2 v0.10.8
+app_server-1  |    Compiling serde_json v1.0.108
+app_server-1  |    Compiling hmac v0.12.1
+app_server-1  |    Compiling hashlink v0.8.4
+app_server-1  |    Compiling thiserror v1.0.50
+app_server-1  |    Compiling tokio-stream v0.1.14
+app_server-1  |    Compiling devise_core v0.4.1
+app_server-1  |    Compiling ref-cast-impl v1.0.20
+app_server-1  |    Compiling cpufeatures v0.2.11
+app_server-1  |    Compiling uncased v0.9.9
+app_server-1  |    Compiling syn v1.0.109
+app_server-1  |    Compiling home v0.5.5
+app_server-1  |    Compiling whoami v1.4.1
+app_server-1  |    Compiling devise_codegen v0.4.1
+app_server-1  |    Compiling sqlx-core v0.7.3
+app_server-1  |    Compiling hkdf v0.12.3
+app_server-1  |    Compiling yansi v1.0.0-rc.1
+app_server-1  |    Compiling sct v0.7.1
+app_server-1  |    Compiling sha1 v0.10.6
+app_server-1  |    Compiling md-5 v0.10.6
+app_server-1  |    Compiling toml_datetime v0.6.5
+app_server-1  |    Compiling serde_spanned v0.6.4
+app_server-1  |    Compiling nix v0.27.1
+app_server-1  |    Compiling stable-pattern v0.1.0
+app_server-1  |    Compiling socket2 v0.4.10
+app_server-1  |    Compiling state v0.6.0
+app_server-1  |    Compiling unicode-segmentation v1.10.1
+app_server-1  |    Compiling winnow v0.5.25
+app_server-1  |    Compiling sqlx-postgres v0.7.3
+app_server-1  |    Compiling hyper v0.14.27
+app_server-1  |    Compiling heck v0.4.1
+app_server-1  |    Compiling tempfile v3.8.1
+app_server-1  |    Compiling atomic-write-file v0.1.2
+app_server-1  |    Compiling pear v0.2.7
+app_server-1  |    Compiling devise v0.4.1
+app_server-1  |    Compiling toml_edit v0.21.0
+app_server-1  |    Compiling h2 v0.3.22
+app_server-1  |    Compiling futures v0.3.29
+app_server-1  |    Compiling figment v0.10.12
+app_server-1  |    Compiling multer v2.1.0
+app_server-1  |    Compiling async-trait v0.1.74
+app_server-1  |    Compiling toml v0.8.8
+app_server-1  |    Compiling rocket_http v0.5.0
+app_server-1  |    Compiling sqlx-macros-core v0.7.3
+app_server-1  |    Compiling async-stream-impl v0.3.5
+app_server-1  |    Compiling encoding_rs v0.8.33
+app_server-1  |    Compiling rocket v0.5.0
+app_server-1  |    Compiling mime v0.3.17
+app_server-1  |    Compiling unicode-xid v0.2.4
+app_server-1  |    Compiling glob v0.3.1
+app_server-1  |    Compiling sqlx-macros v0.7.3
+app_server-1  |    Compiling rocket_codegen v0.5.0
+app_server-1  |    Compiling async-stream v0.3.5
+app_server-1  |    Compiling ubyte v0.10.4
+app_server-1  |    Compiling atomic v0.5.3
+app_server-1  |    Compiling binascii v0.1.4
+app_server-1  |    Compiling rocket_db_pools_codegen v0.1.0
+app_server-1  |    Compiling long-ass-link v0.1.0 (/app)
+app_server-1  |    Compiling nanoid v0.4.0
+app_server-1  |    Compiling sqlx v0.7.3
+app_server-1  |    Compiling rocket_db_pools v0.1.0
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:22:11
+app_server-1  |    |
+app_server-1  | 22 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 23 | |         "SELECT id, slug, dest, created_at, updated_at FROM public.links WHERE slug = $1",
+app_server-1  | 24 | |         slug
+app_server-1  | 25 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:73:11
+app_server-1  |    |
+app_server-1  | 73 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 74 | |         "INSERT INTO public.links (slug, dest) VALUES ($1, $2) RETURNING id, slug, dest, created_at, updated_at",
+app_server-1  | 75 | |         lnk.slug,
+app_server-1  | 76 | |         lnk.dest
+app_server-1  | 77 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: could not compile `long-ass-link` (bin "long-ass-link") due to 2 previous errors
+app_server-1  | [H[2J[3J[Finished running. Exit status: 101]
+app_server-1  | 2023-12-16T17:29:20.442+00:00 - WARN - Could not pass on signal to command: I/O error: No such process (os error 3)
+app_server-1  | [Running 'cargo run']
+app_server-1  |    Compiling cookie v0.18.0
+app_server-1  |    Compiling rustix v0.38.26
+app_server-1  |    Compiling ref-cast v1.0.20
+app_server-1  |    Compiling uncased v0.9.9
+app_server-1  |    Compiling syn v1.0.109
+app_server-1  |    Compiling async-trait v0.1.74
+app_server-1  |    Compiling figment v0.10.12
+app_server-1  |    Compiling long-ass-link v0.1.0 (/app)
+app_server-1  |    Compiling rocket_http v0.5.0
+app_server-1  |    Compiling tempfile v3.8.1
+app_server-1  |    Compiling sqlx-macros-core v0.7.3
+app_server-1  |    Compiling rocket_codegen v0.5.0
+app_server-1  |    Compiling sqlx-macros v0.7.3
+app_server-1  | error: crate `http_body` required to be available in rlib format, but was not found in this form
+app_server-1  | 
+app_server-1  | error: crate `serde` required to be available in rlib format, but was not found in this form
+app_server-1  | 
+app_server-1  | error: could not compile `rocket_codegen` (lib) due to 2 previous errors
+app_server-1  | warning: build failed, waiting for other jobs to finish...
+app_server-1  | [H[2J[3J[Finished running. Exit status: 101]
+app_server-1  | 2023-12-16T17:30:30.887+00:00 - WARN - Could not pass on signal to command: I/O error: No such process (os error 3)
+app_server-1  | [Running 'cargo run']
+app_server-1  |    Compiling rocket_codegen v0.5.0
+app_server-1  |    Compiling sqlx v0.7.3
+app_server-1  |    Compiling rocket v0.5.0
+app_server-1  |    Compiling rocket_db_pools v0.1.0
+app_server-1  |    Compiling long-ass-link v0.1.0 (/app)
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:22:11
+app_server-1  |    |
+app_server-1  | 22 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 23 | |         "SELECT id, slug, dest, created_at, updated_at FROM public.links WHERE slug = $1",
+app_server-1  | 24 | |         slug
+app_server-1  | 25 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:73:11
+app_server-1  |    |
+app_server-1  | 73 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 74 | |         "INSERT INTO public.links (slug, dest) VALUES ($1, $2) RETURNING id, slug, dest, created_at, updated_at",
+app_server-1  | 75 | |         lnk.slug,
+app_server-1  | 76 | |         lnk.dest
+app_server-1  | 77 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: could not compile `long-ass-link` (bin "long-ass-link") due to 2 previous errors
+app_server-1  | [H[2J[3J[Finished running. Exit status: 101]
+app_server-1  | [Running 'cargo run']
+app_server-1  |    Compiling long-ass-link v0.1.0 (/app)
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:22:11
+app_server-1  |    |
+app_server-1  | 22 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 23 | |         "SELECT id, slug, dest, created_at, updated_at FROM public.links WHERE slug = $1",
+app_server-1  | 24 | |         slug
+app_server-1  | 25 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:73:11
+app_server-1  |    |
+app_server-1  | 73 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 74 | |         "INSERT INTO public.links (slug, dest) VALUES ($1, $2) RETURNING id, slug, dest, created_at, updated_at",
+app_server-1  | 75 | |         lnk.slug,
+app_server-1  | 76 | |         lnk.dest
+app_server-1  | 77 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: could not compile `long-ass-link` (bin "long-ass-link") due to 2 previous errors
+app_server-1  | [H[2J[3J[Finished running. Exit status: 101]
+app_server-1  | [Running 'cargo run']
+app_server-1  |    Compiling long-ass-link v0.1.0 (/app)
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:22:11
+app_server-1  |    |
+app_server-1  | 22 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 23 | |         "SELECT id, slug, dest, created_at, updated_at FROM public.links WHERE slug = $1",
+app_server-1  | 24 | |         slug
+app_server-1  | 25 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:73:11
+app_server-1  |    |
+app_server-1  | 73 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 74 | |         "INSERT INTO public.links (slug, dest) VALUES ($1, $2) RETURNING id, slug, dest, created_at, updated_at",
+app_server-1  | 75 | |         lnk.slug,
+app_server-1  | 76 | |         lnk.dest
+app_server-1  | 77 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: could not compile `long-ass-link` (bin "long-ass-link") due to 2 previous errors
+app_server-1  | [H[2J[3J[Finished running. Exit status: 101]
+app_server-1  | [Running 'cargo run']
+app_server-1  |    Compiling long-ass-link v0.1.0 (/app)
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:22:11
+app_server-1  |    |
+app_server-1  | 22 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 23 | |         "SELECT id, slug, dest, created_at, updated_at FROM public.links WHERE slug = $1",
+app_server-1  | 24 | |         slug
+app_server-1  | 25 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: error communicating with database: Address not available (os error 99)
+app_server-1  |   --> src/link.rs:73:11
+app_server-1  |    |
+app_server-1  | 73 |       match sqlx::query!(
+app_server-1  |    |  ___________^
+app_server-1  | 74 | |         "INSERT INTO public.links (slug, dest) VALUES ($1, $2) RETURNING id, slug, dest, created_at, updated_at",
+app_server-1  | 75 | |         lnk.slug,
+app_server-1  | 76 | |         lnk.dest
+app_server-1  | 77 | |     )
+app_server-1  |    | |_____^
+app_server-1  |    |
+app_server-1  |    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+app_server-1  | 
+app_server-1  | error: could not compile `long-ass-link` (bin "long-ass-link") due to 2 previous errors
+app_server-1  | [H[2J[3J[Finished running. Exit status: 101]

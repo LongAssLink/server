@@ -7,7 +7,7 @@ pub(crate) fn date_to_str(d: Option<PrimitiveDateTime>) -> Option<String> {
 }
 
 pub(crate) fn generate_slug() -> String {
-    nanoid!(10)
+    nanoid!(7)
 }
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
