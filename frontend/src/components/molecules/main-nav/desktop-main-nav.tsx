@@ -1,6 +1,8 @@
-import { cn } from '@/lib/utils';
 import { Link1Icon } from '@radix-ui/react-icons';
 import { Link, useLocation } from 'react-router-dom';
+
+import { cn } from '@/lib/utils';
+
 import { processNavItems } from './processNavItems';
 import { MainNavProps } from './types';
 
@@ -10,9 +12,9 @@ export function MainNav({ navItems = [] }: MainNavProps) {
   const navItemList = processNavItems(navItems, pathname);
 
   return (
-    <div className='mr-4 hidden md:flex'>
-      <Link to='/' className='mr-6 flex items-center space-x-2'>
-        <Link1Icon className='h-6 w-6' />
+    <div className='hidden mr-4 md:flex'>
+      <Link to='/' className='flex items-center mr-6 space-x-2'>
+        <Link1Icon className='w-6 h-6' />
         <span className='hidden font-bold sm:inline-block'>LongAssLink</span>
       </Link>
       <nav className='flex items-center space-x-6 text-sm font-medium'>

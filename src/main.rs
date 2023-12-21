@@ -1,4 +1,5 @@
 use rocket::fs::{FileServer, NamedFile, Options};
+use rocket_governor::rocket_governor_catcher;
 
 #[macro_use]
 extern crate rocket;
@@ -22,4 +23,5 @@ fn rocket() -> _ {
         .attach(link::register_routes("/api"))
         .mount("/", FileServer::new("public", Options::None).rank(1))
         .mount("/", routes![fallback_url])
+        .register("/", catchers![rocket_governor_catcher])
 }

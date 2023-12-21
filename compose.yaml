@@ -2,22 +2,11 @@ services:
   app_server:
     build:
       context: .
-      dockerfile_inline: |
-        FROM rust:1.74-alpine
-        WORKDIR /app
-        RUN apk add alpine-sdk openssl-dev
-        RUN RUSTFLAGS="-Ctarget-feature=-crt-static" cargo install sqlx-cli cargo-watch
-    command:
-      - ash
-      - -c
-      - >-
-        cargo watch -c -w src -x run
+      dockerfile: Dockerfile.dev
     ports:
       - 9000:9000
     volumes:
       - .:/app
-    depends_on:
-      - db
     environment:
       - DATABASE_URL=postgres://lal:3%25b1aAeb@db:5432/link
   db:

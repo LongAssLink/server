@@ -14,7 +14,7 @@ const browserRouter = createBrowserRouter([
       {
         path: '/',
         async lazy() {
-          return import('./routes/home').then(m => ({ Component: m.default }))
+          return import('./routes/home').then(m => ({ Component: m.default }));
         }
       }
     ]
