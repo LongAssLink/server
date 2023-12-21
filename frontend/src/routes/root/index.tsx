@@ -6,7 +6,11 @@ import { SiteFooter } from '@/components/molecules/site-footer';
 import { SiteHeader } from '@/components/molecules/site-header';
 import { Toaster } from '@/components/ui/toaster';
 
-export default function Root() {
+interface RootPageProps {
+  children?: React.ReactNode;
+}
+
+export default function Root({ children }: RootPageProps) {
   return (
     <ThemeProvider attribute='class'>
       <Provider>
@@ -14,6 +18,7 @@ export default function Root() {
         <main>
           <section className='container'>
             <Outlet />
+            {children}
           </section>
           <Toaster />
         </main>

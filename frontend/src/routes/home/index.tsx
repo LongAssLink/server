@@ -7,14 +7,8 @@ import ShortenForm, {
 import ShortenResult from '@/components/smart/shorten-url-result';
 import { toast } from '@/components/ui/use-toast';
 
-import api, { type ApiResponse } from '@/lib/api';
+import api, { type ApiResponses } from '@/lib/api';
 import { linkAtom } from '@/lib/state/link';
-
-type LinkResponse = ApiResponse<{
-  id: string;
-  dest: string;
-  slug: string;
-}>;
 
 export default function HomePage() {
   const [loading, setLoading] = useState(false);
@@ -31,13 +25,13 @@ export default function HomePage() {
             slug: ''
           }
         })
-        .json<LinkResponse>();
+        .json<ApiResponses<'api/link'>>();
       setLinkRes(res);
     } catch (error) {
       toast({
         title: 'Oops! Something went wrong...',
         description: (
-          <p className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>
+          <p className='mt-2 w-[340px] rounded-md bg-background p-4'>
             Please try again later!
           </p>
         )

@@ -10,6 +10,7 @@ extern crate nanoid;
 mod db;
 mod link;
 mod utils;
+mod rate_limit;
 
 #[get("/<_..>", rank = 2)]
 pub(crate) async fn fallback_url() -> Option<NamedFile> {

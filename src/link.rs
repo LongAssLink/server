@@ -4,20 +4,9 @@ use rocket::{
     serde::{json::Json, Deserialize, Serialize},
 };
 use rocket_db_pools::{sqlx, Connection};
-use rocket_governor::{RocketGovernor, RocketGovernable, Method, Quota};
+use rocket_governor::RocketGovernor;
 
-use crate::{
-    db::Db,
-    utils::*,
-};
-
-pub struct RateLimitGuard;
-
-impl<'r> RocketGovernable<'r> for RateLimitGuard {
-    fn quota(_method: Method, _route_name: &str) -> Quota {
-        Quota::per_second(Self::nonzero(1u32))
-    }
-}
+use crate::{db::Db, rate_limit::RateLimitGuard, utils::*};
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
 #[serde(crate = "rocket::serde")]
@@ -86,10 +75,9 @@ async fn create_link(
     mut lnk: Json<Link>,
     _limitguard: RocketGovernor<'_, RateLimitGuard>,
 ) -> (Status, Json<ApiResponse<Link>>) {
-    lnk.slug = match lnk.slug.len() {
-        0 => generate_slug(),
-        _ => lnk.slug.clone(),
-    };
+    if lnk.slug.len() < 1 {
+        lnk.slug = generate_slug();
+    }
 
     let existing = sqlx::query!(
         "SELECT id, slug, dest, created_at, updated_at FROM public.links WHERE dest = $1",

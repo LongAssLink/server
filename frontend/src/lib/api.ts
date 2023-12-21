@@ -13,4 +13,15 @@ export interface ApiResponse<T> {
   error?: string;
 }
 
+type LinkResponse = {
+  id: string;
+  dest: string;
+  slug: string;
+};
+
+export type ApiResponses<T extends string> = {
+  'api/link': ApiResponse<LinkResponse>;
+  [key: string]: ApiResponse<unknown>;
+}[T];
+
 export default api;
