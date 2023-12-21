@@ -1,6 +1,6 @@
 [default]
 address = "0.0.0.0"
-port = 9000
+port    = 9000
 
 [default.databases.link]
-url = "postgres://lal:3%25b1aAeb@localhost:5432/link"
+url = "postgres://lal:3%25b1aAeb@db:5432/link"

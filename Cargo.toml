@@ -1,20 +1,29 @@
 [package]
-name = "long-ass-link"
-version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+name    = "long-ass-link"
+version = "0.1.0"
 
 [dependencies]
 nanoid = "0.4.0"
-rocket = { version = "0.5.0", features = ["json"] }
-time = { version = "0.3.30", features = ["macros"] }
 
-[dependencies.sqlx]
-version = "0.7.3"
-default-features = false
-features = ["postgres", "json", "macros", "migrate", "uuid", "time"]
+[dependencies.rocket]
+features = ["json"]
+version  = "0.5.0"
 
 [dependencies.rocket_db_pools]
-version = "0.1.0"
-features = ["sqlx_postgres"]
+default-features = false
+features         = ["sqlx", "sqlx_macros", "sqlx_postgres"]
+version          = "0.1.0"
+
+[dependencies.rocket-governor]
+features = ["limit_info"]
+version  = "0.2.0-rc.1"
+
+[dependencies.sqlx]
+default-features = false
+features         = ["postgres", "json", "macros", "migrate", "uuid", "time"]
+version          = "0.7.3"
+
+[dependencies.time]
+features = ["macros"]
+version  = "0.3.30"

@@ -4,8 +4,9 @@ use rocket::{
     serde::{json::Json, Deserialize, Serialize},
 };
 use rocket_db_pools::{sqlx, Connection};
+use rocket_governor::RocketGovernor;
 
-use crate::{db::Db, utils::*};
+use crate::{db::Db, rate_limit::RateLimitGuard, utils::*};
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
 #[serde(crate = "rocket::serde")]
@@ -17,6 +18,28 @@ struct Link {
     updated_at: Option<String>,
 }
 
+fn respond_with_link(status: Status, link: Link) -> (Status, Json<ApiResponse<Link>>) {
+    (
+        status,
+        Json(ApiResponse {
+            ok: true,
+            data: Some(link),
+            error: None,
+        }),
+    )
+}
+
+fn respond_with_error(status: Status, error: String) -> (Status, Json<ApiResponse<Link>>) {
+    (
+        status,
+        Json(ApiResponse {
+            ok: false,
+            data: None,
+            error: Some(error),
+        }),
+    )
+}
+
 #[get("/<slug>")]
 async fn find_link(mut db: Connection<Db>, slug: &str) -> (Status, Json<ApiResponse<Link>>) {
     match sqlx::query!(
@@ -26,37 +49,22 @@ async fn find_link(mut db: Connection<Db>, slug: &str) -> (Status, Json<ApiRespo
     .fetch_one(&mut **db)
     .await
     {
-        Err(e) => match e {
-            sqlx::Error::RowNotFound => (
-                Status::NotFound,
-                Json(ApiResponse {
-                    ok: false,
-                    data: None,
-                    error: Some("Link not found".into()),
-                }),
-            ),
-            _ => (
-                Status::InternalServerError,
-                Json(ApiResponse {
-                    ok: false,
-                    data: None,
-                    error: Some(format!("{:?}", e.to_string())),
-                }),
-            ),
-        },
-        Ok(r) => (
+        Err(e) => respond_with_error(
+            match e {
+                sqlx::Error::RowNotFound => Status::NotFound,
+                _ => Status::InternalServerError,
+            },
+            format!("{:?}", e.to_string()),
+        ),
+        Ok(r) => respond_with_link(
             Status::Ok,
-            Json(ApiResponse {
-                ok: true,
-                data: Some(Link {
-                    id: r.id.to_string().into(),
-                    slug: r.slug,
-                    dest: r.dest,
-                    created_at: date_to_str(r.created_at),
-                    updated_at: date_to_str(r.updated_at),
-                }),
-                error: None,
-            }),
+            Link {
+                id: r.id.to_string().into(),
+                slug: r.slug,
+                dest: r.dest,
+                created_at: date_to_str(r.created_at),
+                updated_at: date_to_str(r.updated_at),
+            },
         ),
     }
 }
@@ -65,11 +73,39 @@ async fn find_link(mut db: Connection<Db>, slug: &str) -> (Status, Json<ApiRespo
 async fn create_link(
     mut db: Connection<Db>,
     mut lnk: Json<Link>,
+    _limitguard: RocketGovernor<'_, RateLimitGuard>,
 ) -> (Status, Json<ApiResponse<Link>>) {
-    lnk.slug = match lnk.slug.len() {
-        0 => generate_slug(),
-        _ => lnk.slug.clone(),
-    };
+    if lnk.slug.len() < 1 {
+        lnk.slug = generate_slug();
+    }
+
+    let existing = sqlx::query!(
+        "SELECT id, slug, dest, created_at, updated_at FROM public.links WHERE dest = $1",
+        lnk.dest
+    )
+    .fetch_one(&mut **db)
+    .await
+    .ok();
+
+    if let Some(r) = existing {
+        let _ = sqlx::query!(
+            "UPDATE public.links SET updated_at = NOW() WHERE id = $1",
+            r.id
+        )
+        .execute(&mut **db)
+        .await;
+        return respond_with_link(
+            Status::Ok,
+            Link {
+                id: r.id.to_string().into(),
+                slug: r.slug,
+                dest: r.dest,
+                created_at: date_to_str(r.created_at),
+                updated_at: date_to_str(r.updated_at),
+            },
+        );
+    }
+
     match sqlx::query!(
         "INSERT INTO public.links (slug, dest) VALUES ($1, $2) RETURNING id, slug, dest, created_at, updated_at",
         lnk.slug,
@@ -78,28 +114,17 @@ async fn create_link(
     .fetch_one(&mut **db)
     .await
     {
-        Err(e) => (
+        Err(e) => respond_with_error(
             Status::InternalServerError,
-            Json(ApiResponse {
-                ok: false,
-                data: None,
-                error: Some(format!("{:?}", e.to_string())),
-            }),
+            format!("{:?}", e.to_string())
         ),
-        Ok(r) => (
-            Status::Ok,
-            Json(ApiResponse {
-                ok: true,
-                data: Some(Link {
-                    id: r.id.to_string().into(),
-                    slug: r.slug,
-                    dest: r.dest,
-                    created_at: date_to_str(r.created_at),
-                    updated_at: date_to_str(r.updated_at),
-                }),
-                error: None
-            })
-        )
+        Ok(r) => respond_with_link(Status::Created, Link {
+            id: r.id.to_string().into(),
+            slug: r.slug,
+            dest: r.dest,
+            created_at: date_to_str(r.created_at),
+            updated_at: date_to_str(r.updated_at),
+        })
     }
 }
 

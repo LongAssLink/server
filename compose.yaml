@@ -2,9 +2,13 @@ services:
   app_server:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - 9000:9000
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=postgres://lal:3%25b1aAeb@db:5432/link
   db:
     image: postgres:16-alpine
     environment:
