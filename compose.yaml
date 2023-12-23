@@ -2,7 +2,7 @@ services:
   app_server:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: _docker/Dockerfile.dev
     ports:
       - 9000:9000
     volumes:

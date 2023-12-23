@@ -1,3 +1,3 @@
 [submodule "frontend"]
 	path = frontend
-	url = git@git.elf.local:odin/lal_frontend.git
+	url = git@github.com:LongAssLink/frontend.git

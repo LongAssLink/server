@@ -3,7 +3,4 @@ Dockerfile
 .dockerignore
 .git
 .gitignore
-*.tf*
-**/.terraform/*
-frontend/node_modules*
-frontend/.yarn/*
+/frontend

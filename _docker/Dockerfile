@@ -16,4 +16,5 @@ FROM debian:stable-slim AS runtime
 WORKDIR /app
 COPY --from=builder /app/target/debug/long-ass-link .
 COPY --from=builder /app/Rocket.toml .
+COPY public public
 ENTRYPOINT ["/app/long-ass-link"]
