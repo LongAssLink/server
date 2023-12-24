@@ -49,7 +49,7 @@ impl Handler for CachedFileServer {
     async fn handle<'r>(&self, req: &'r Request<'_>, data: Data<'r>) -> Outcome<'r> {
         match self.server.handle(req, data).await {
             Outcome::Success(mut resp) => {
-                resp.set_raw_header("Cache-control", "max-age=86400"); // 24h (24 * 60 * 60)
+                resp.set_raw_header("Cache-control", "max-age=31536000"); // 1 year
                 Outcome::Success(resp)
             }
             i => i,
