@@ -5,6 +5,7 @@ name    = "long-ass-link"
 version = "0.1.0"
 
 [dependencies]
+async-trait = "0.1.75"
 nanoid = "0.4.0"
 
 [dependencies.rocket]
